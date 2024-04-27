@@ -106,14 +106,17 @@ def webserverSearch():
 		total_results=total_results
 	)
 
+def startFlask():
+	app.run(host='0.0.0.0', port=5000)
+
 def main():
 	# https://osu.ppy.sh/home/account/edit#legacy-api
 	listener = ChatListener(
 		token = os.getenv('LEGACY_API_IRC_SERVER_PASSWORD'),
 		nickname = os.getenv('LEGACY_API_IRC_SERVER_USERNAME') 
 	)
-
-	flask_thread = Thread(target=app.run)
+	
+	flask_thread = Thread(target=startFlask)
 	flask_thread.start()
 
 	listener.run()
