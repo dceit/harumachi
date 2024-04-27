@@ -32,8 +32,6 @@ class ChatListener(osu_irc.Client):
 		self.db_connection.commit()
 		
 	def insertLog(self, data):
-		# XSS fix
-	
 		cursor = self.db_connection.cursor()
 		cursor.execute('''
 			INSERT INTO log (user_name, room_name, content)
