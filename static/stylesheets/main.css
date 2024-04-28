@@ -7,6 +7,30 @@ body {
   font-weight: normal;
 }
 
+
+body#home::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://wallpapers-all.com/uploads/posts/2018-03/3_osu!.jpg');
+    background-size: cover;
+    filter: blur(10px);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
 .center-container {
   transform: translateY(calc(50vh - 50%));
 }
